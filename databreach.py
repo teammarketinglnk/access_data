@@ -4,25 +4,44 @@ import json
 import os
 import smtplib
 import logging
+import sys
 from datetime import datetime, timezone
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from dotenv import load_dotenv
 
-# -----------------------------
-# LOAD ENV + LOGGING
-# -----------------------------
+# =====================================================
+# LOAD ENV
+# =====================================================
 load_dotenv()
 
-logging.basicConfig(
-    filename="status.log",
-    level=logging.INFO,
-    format="%(asctime)s %(levelname)s %(message)s",
+# =====================================================
+# LOGGING CONFIG (FILE + CONSOLE)
+# =====================================================
+LOG_FILE = "status.log"
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+logger.handlers.clear()
+
+# Console handler (GitHub Actions)
+console_handler = logging.StreamHandler(sys.stdout)
+console_handler.setFormatter(
+    logging.Formatter("%(asctime)s | %(levelname)s | %(message)s")
 )
 
-# -----------------------------
+# File handler
+file_handler = logging.FileHandler(LOG_FILE, mode="a", encoding="utf-8")
+file_handler.setFormatter(
+    logging.Formatter("%(asctime)s | %(levelname)s | %(message)s")
+)
+
+logger.addHandler(console_handler)
+logger.addHandler(file_handler)
+
+# =====================================================
 # CONFIG
-# -----------------------------
+# =====================================================
 SITEMAP_URL = "https://www.breachsense.com/sitemap.xml"
 BREACH_PREFIX = "https://www.breachsense.com/breaches/"
 
@@ -33,27 +52,28 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; BreachSenseDailyScraper/1.0)"
 }
 
-# -----------------------------
+# =====================================================
 # SMTP / EMAIL CONFIG (ENV)
-# -----------------------------
+# =====================================================
 SMTP_HOST = os.getenv("SMTP_HOST")
 SMTP_PORT = int(os.getenv("SMTP_PORT", "587"))
 SMTP_USER = os.getenv("SMTP_USER")
 SMTP_PASSWORD = os.getenv("SMTP_PASSWORD")
 EMAIL_FROM = os.getenv("EMAIL_FROM", SMTP_USER)
-EMAIL_TO = os.getenv("EMAIL_TO", "").split(",")
+EMAIL_TO = [e.strip() for e in os.getenv("EMAIL_TO", "").split(",") if e.strip()]
 
-# -----------------------------
+# =====================================================
 # FETCH SITEMAP
-# -----------------------------
+# =====================================================
 def fetch_sitemap():
+    logger.info(f"Fetching sitemap: {SITEMAP_URL}")
     response = requests.get(SITEMAP_URL, headers=HEADERS, timeout=30)
     response.raise_for_status()
     return response.content
 
-# -----------------------------
+# =====================================================
 # PARSE SITEMAP
-# -----------------------------
+# =====================================================
 def parse_sitemap(xml_data):
     root = ET.fromstring(xml_data)
     ns = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
@@ -63,7 +83,7 @@ def parse_sitemap(xml_data):
         loc = url.find("sm:loc", ns)
         lastmod = url.find("sm:lastmod", ns)
 
-        if loc is None or not loc.text:
+        if not loc or not loc.text:
             continue
 
         link = loc.text.strip()
@@ -77,31 +97,30 @@ def parse_sitemap(xml_data):
 
     return results
 
-# -----------------------------
+# =====================================================
 # JSON HELPERS
-# -----------------------------
+# =====================================================
 def load_json(path):
     if not os.path.exists(path):
         return []
     try:
         with open(path, "r", encoding="utf-8") as f:
             content = f.read().strip()
-            if not content:
-                return []
-            return json.loads(content)
+            return json.loads(content) if content else []
     except json.JSONDecodeError:
-        logging.warning(f"{path} invalid JSON — reinitializing")
+        logger.warning(f"{path} invalid JSON — reinitializing")
         return []
 
 def save_json(path, data):
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
 
-# -----------------------------
+# =====================================================
 # SMTP EMAIL SENDER
-# -----------------------------
+# =====================================================
 def send_email(subject: str, body: str):
-   def send_email(subject: str, body: str):
+    logger.info("📧 Preparing email")
+
     try:
         msg = MIMEMultipart()
         msg["From"] = EMAIL_FROM
@@ -109,35 +128,36 @@ def send_email(subject: str, body: str):
         msg["Subject"] = subject
         msg.attach(MIMEText(body, "plain"))
 
-        with smtplib.SMTP_SSL(SMTP_HOST, SMTP_PORT, timeout=30) as server:
+        logger.info("🔌 Connecting to SMTP server")
+        with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=30) as server:
+            server.ehlo()
+            server.starttls()
+            server.ehlo()
             server.login(SMTP_USER, SMTP_PASSWORD)
             server.sendmail(EMAIL_FROM, EMAIL_TO, msg.as_string())
 
-        logging.info("Email sent successfully via SMTP_SSL")
+        logger.info("✅ Email sent successfully")
 
-    except Exception as e:
-        logging.exception("Email sending failed")
+    except Exception:
+        logger.exception("❌ Email sending FAILED")
         raise
 
-
-
-
-# -----------------------------
+# =====================================================
 # MAIN DAILY LOGIC
-# -----------------------------
+# =====================================================
 def main():
+    logger.info("🚀 BreachSense daily scrape started")
+
     try:
-        logging.info("🚀 BreachSense daily scrape started")
-
         current_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+        logger.info(f"Run date (UTC): {current_date}")
 
-        xml_data = fetch_sitemap()
-        scraped_today = parse_sitemap(xml_data)
-        logging.info(f"Sitemap parsed | URLs found: {len(scraped_today)}")
+        scraped_today = parse_sitemap(fetch_sitemap())
+        logger.info(f"Sitemap parsed | URLs found: {len(scraped_today)}")
 
         master_data = load_json(MASTER_FILE)
         master_map = {item["url"]: item for item in master_data}
-        logging.info(f"Master JSON loaded | Existing URLs: {len(master_data)}")
+        logger.info(f"Master JSON loaded | Records: {len(master_data)}")
 
         new_links = []
         updated_links = []
@@ -155,24 +175,19 @@ def main():
             else:
                 old_lastmod = master_map[url].get("lastmod")
                 if lastmod and lastmod != old_lastmod:
-                    updated_links.append({
-                        "url": url,
-                        "old_lastmod": old_lastmod,
-                        "new_lastmod": lastmod,
-                        "scraped_date": current_date
-                    })
                     master_map[url]["lastmod"] = lastmod
                     master_map[url]["scraped_date"] = current_date
+                    updated_links.append(url)
 
-        logging.info(
+        logger.info(
             f"Comparison complete | New: {len(new_links)} | Updated: {len(updated_links)}"
         )
 
-        # Update master
+        # Update master JSON
         master_data.extend(new_links)
         save_json(MASTER_FILE, master_data)
 
-        # Daily JSON
+        # Save daily JSON
         save_json(DAILY_FILE, {
             "date": current_date,
             "total_scraped_today": len(scraped_today),
@@ -182,25 +197,24 @@ def main():
             "updated_links": updated_links
         })
 
-        logging.info("Master and daily JSON saved")
+        logger.info("JSON files saved")
 
-        # -----------------------------
+        # =================================================
         # EMAIL (ALWAYS SENT)
-        # -----------------------------
+        # =================================================
         subject = f"📊 BreachSense Daily Scrape Report | {current_date}"
 
         if new_links:
-            logging.info("Preparing email: NEW URLs found")
-            lines = [
+            logger.info("Preparing email: NEW URLs found")
+            body_lines = [
                 f"Date: {current_date}",
                 f"New BreachSense URLs found: {len(new_links)}",
                 ""
             ]
-            for n in new_links:
-                lines.append(f" - {n['url']}")
-            body = "\n".join(lines)
+            body_lines.extend(f"- {n['url']}" for n in new_links)
+            body = "\n".join(body_lines)
         else:
-            logging.info("Preparing email: NO new URLs found")
+            logger.info("Preparing email: NO new URLs found")
             body = (
                 f"Date: {current_date}\n\n"
                 "✅ No new BreachSense URLs were found today.\n\n"
@@ -209,14 +223,17 @@ def main():
 
         send_email(subject, body)
 
-        logging.info("🏁 BreachSense daily scrape completed successfully")
+        logger.info("🏁 BreachSense daily scrape completed successfully")
 
-    except Exception as e:
-        logging.exception("❌ BreachSense daily scrape FAILED")
+    except Exception:
+        logger.exception("❌ BreachSense daily scrape FAILED")
         raise
+    finally:
+        for handler in logger.handlers:
+            handler.flush()
 
-# -----------------------------
+# =====================================================
 # ENTRY POINT
-# -----------------------------
+# =====================================================
 if __name__ == "__main__":
     main()
