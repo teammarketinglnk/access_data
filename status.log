@@ -1,0 +1,195 @@
+2026-01-13 15:38:05,394 INFO \U0001f680 BreachSense daily scrape started
+2026-01-13 15:38:07,492 INFO Sitemap parsed | URLs found: 22554
+2026-01-13 15:38:07,522 INFO Master JSON loaded | Existing URLs: 22511
+2026-01-13 15:38:07,527 INFO Comparison complete | New: 43 | Updated: 10
+2026-01-13 15:38:07,651 INFO Master and daily JSON saved
+2026-01-13 15:38:07,651 INFO Preparing email: NEW URLs found
+2026-01-13 15:38:07,657 ERROR Email sending failed: please run connect() first
+2026-01-13 15:38:07,657 ERROR \u274c BreachSense daily scrape FAILED
+Traceback (most recent call last):
+  File "C:\Users\L&K\Documents\file1\scrapercopy\databreach.py", line 207, in main
+    send_email(subject, body)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\L&K\Documents\file1\scrapercopy\databreach.py", line 112, in send_email
+    server.starttls()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 783, in starttls
+    self.ehlo_or_helo_if_needed()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 620, in ehlo_or_helo_if_needed
+    if not (200 <= self.ehlo()[0] <= 299):
+                   ~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 460, in ehlo
+    self.putcmd(self.ehlo_msg, name or self.local_hostname)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 387, in putcmd
+    self.send(f'{s}{CRLF}')
+    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 374, in send
+    raise SMTPServerDisconnected('please run connect() first')
+smtplib.SMTPServerDisconnected: please run connect() first
+2026-01-13 15:40:13,509 INFO \U0001f680 BreachSense daily scrape started
+2026-01-13 15:40:16,301 INFO Sitemap parsed | URLs found: 22554
+2026-01-13 15:40:16,327 INFO Master JSON loaded | Existing URLs: 22554
+2026-01-13 15:40:16,335 INFO Comparison complete | New: 0 | Updated: 8
+2026-01-13 15:40:16,465 INFO Master and daily JSON saved
+2026-01-13 15:40:16,466 INFO Preparing email: NO new URLs found
+2026-01-13 15:40:16,470 ERROR Email sending failed
+Traceback (most recent call last):
+  File "C:\Users\L&K\Documents\file1\scrapercopy\databreach.py", line 112, in send_email
+    server.ehlo()                 # \U0001f511 REQUIRED
+    ~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 460, in ehlo
+    self.putcmd(self.ehlo_msg, name or self.local_hostname)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 387, in putcmd
+    self.send(f'{s}{CRLF}')
+    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 374, in send
+    raise SMTPServerDisconnected('please run connect() first')
+smtplib.SMTPServerDisconnected: please run connect() first
+2026-01-13 15:40:16,485 ERROR \u274c BreachSense daily scrape FAILED
+Traceback (most recent call last):
+  File "C:\Users\L&K\Documents\file1\scrapercopy\databreach.py", line 211, in main
+    send_email(subject, body)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\L&K\Documents\file1\scrapercopy\databreach.py", line 112, in send_email
+    server.ehlo()                 # \U0001f511 REQUIRED
+    ~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 460, in ehlo
+    self.putcmd(self.ehlo_msg, name or self.local_hostname)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 387, in putcmd
+    self.send(f'{s}{CRLF}')
+    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 374, in send
+    raise SMTPServerDisconnected('please run connect() first')
+smtplib.SMTPServerDisconnected: please run connect() first
+2026-01-13 15:41:59,169 INFO \U0001f680 BreachSense daily scrape started
+2026-01-13 15:42:00,692 INFO Sitemap parsed | URLs found: 22554
+2026-01-13 15:42:00,722 INFO Master JSON loaded | Existing URLs: 22554
+2026-01-13 15:42:00,729 INFO Comparison complete | New: 0 | Updated: 8
+2026-01-13 15:42:00,858 INFO Master and daily JSON saved
+2026-01-13 15:42:00,858 INFO Preparing email: NO new URLs found
+2026-01-13 15:42:00,862 ERROR Email sending failed
+Traceback (most recent call last):
+  File "C:\Users\L&K\Documents\file1\scrapercopy\databreach.py", line 112, in send_email
+    server.ehlo()                 # \U0001f511 REQUIRED
+    ~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 460, in ehlo
+    self.putcmd(self.ehlo_msg, name or self.local_hostname)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 387, in putcmd
+    self.send(f'{s}{CRLF}')
+    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 374, in send
+    raise SMTPServerDisconnected('please run connect() first')
+smtplib.SMTPServerDisconnected: please run connect() first
+2026-01-13 15:42:00,864 ERROR \u274c BreachSense daily scrape FAILED
+Traceback (most recent call last):
+  File "C:\Users\L&K\Documents\file1\scrapercopy\databreach.py", line 211, in main
+    send_email(subject, body)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\L&K\Documents\file1\scrapercopy\databreach.py", line 112, in send_email
+    server.ehlo()                 # \U0001f511 REQUIRED
+    ~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 460, in ehlo
+    self.putcmd(self.ehlo_msg, name or self.local_hostname)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 387, in putcmd
+    self.send(f'{s}{CRLF}')
+    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 374, in send
+    raise SMTPServerDisconnected('please run connect() first')
+smtplib.SMTPServerDisconnected: please run connect() first
+2026-01-13 15:43:47,972 INFO \U0001f680 BreachSense daily scrape started
+2026-01-13 15:43:49,979 INFO Sitemap parsed | URLs found: 22554
+2026-01-13 15:43:50,006 INFO Master JSON loaded | Existing URLs: 22554
+2026-01-13 15:43:50,012 INFO Comparison complete | New: 0 | Updated: 8
+2026-01-13 15:43:50,141 INFO Master and daily JSON saved
+2026-01-13 15:43:50,141 INFO Preparing email: NO new URLs found
+2026-01-13 15:43:50,143 ERROR Email sending failed
+Traceback (most recent call last):
+  File "C:\Users\L&K\Documents\file1\scrapercopy\databreach.py", line 112, in send_email
+    server.ehlo()                 # \U0001f511 REQUIRED
+    ~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 460, in ehlo
+    self.putcmd(self.ehlo_msg, name or self.local_hostname)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 387, in putcmd
+    self.send(f'{s}{CRLF}')
+    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 374, in send
+    raise SMTPServerDisconnected('please run connect() first')
+smtplib.SMTPServerDisconnected: please run connect() first
+2026-01-13 15:43:50,147 ERROR \u274c BreachSense daily scrape FAILED
+Traceback (most recent call last):
+  File "C:\Users\L&K\Documents\file1\scrapercopy\databreach.py", line 211, in main
+    send_email(subject, body)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\L&K\Documents\file1\scrapercopy\databreach.py", line 112, in send_email
+    server.ehlo()                 # \U0001f511 REQUIRED
+    ~~~~~~~~~~~^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 460, in ehlo
+    self.putcmd(self.ehlo_msg, name or self.local_hostname)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 387, in putcmd
+    self.send(f'{s}{CRLF}')
+    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 374, in send
+    raise SMTPServerDisconnected('please run connect() first')
+smtplib.SMTPServerDisconnected: please run connect() first
+2026-01-13 15:45:24,063 INFO \U0001f680 BreachSense daily scrape started
+2026-01-13 15:45:26,090 INFO Sitemap parsed | URLs found: 22554
+2026-01-13 15:45:26,121 INFO Master JSON loaded | Existing URLs: 22554
+2026-01-13 15:45:26,126 INFO Comparison complete | New: 0 | Updated: 8
+2026-01-13 15:45:26,247 INFO Master and daily JSON saved
+2026-01-13 15:45:26,247 INFO Preparing email: NO new URLs found
+2026-01-13 15:45:30,327 ERROR Email sending failed
+Traceback (most recent call last):
+  File "C:\Users\L&K\Documents\file1\scrapercopy\databreach.py", line 112, in send_email
+    server.connect(SMTP_HOST, SMTP_PORT)   # \U0001f511 REQUIRED
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 350, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 321, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+                                    self.source_address)
+                                    ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 864, in create_connection
+    raise exceptions[0]
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 849, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-01-13 15:45:30,338 ERROR \u274c BreachSense daily scrape FAILED
+Traceback (most recent call last):
+  File "C:\Users\L&K\Documents\file1\scrapercopy\databreach.py", line 213, in main
+    send_email(subject, body)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\L&K\Documents\file1\scrapercopy\databreach.py", line 112, in send_email
+    server.connect(SMTP_HOST, SMTP_PORT)   # \U0001f511 REQUIRED
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 350, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 321, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+                                    self.source_address)
+                                    ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 864, in create_connection
+    raise exceptions[0]
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 849, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-01-13 15:48:06,935 INFO \U0001f680 BreachSense daily scrape started
+2026-01-13 15:48:09,314 INFO Sitemap parsed | URLs found: 22554
+2026-01-13 15:48:09,342 INFO Master JSON loaded | Existing URLs: 22554
+2026-01-13 15:48:09,347 INFO Comparison complete | New: 0 | Updated: 8
+2026-01-13 15:48:09,482 INFO Master and daily JSON saved
+2026-01-13 15:48:09,482 INFO Preparing email: NO new URLs found
+2026-01-13 15:48:09,482 INFO \U0001f3c1 BreachSense daily scrape completed successfully
