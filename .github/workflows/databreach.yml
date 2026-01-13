@@ -1,5 +1,6 @@
 name: Daily BreachSense Scraper
-
+permissions:
+  contents: write
 on:
   schedule:
     # Runs every day at 06:00 UTC (11:30 AM IST)
