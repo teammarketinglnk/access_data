@@ -83,7 +83,8 @@ def parse_sitemap(xml_data):
         loc = url.find("sm:loc", ns)
         lastmod = url.find("sm:lastmod", ns)
 
-        if not loc or not loc.text:
+        # ✅ FIXED (no DeprecationWarning)
+        if loc is None or loc.text is None:
             continue
 
         link = loc.text.strip()
@@ -121,26 +122,21 @@ def save_json(path, data):
 def send_email(subject: str, body: str):
     logger.info("📧 Preparing email")
 
-    try:
-        msg = MIMEMultipart()
-        msg["From"] = EMAIL_FROM
-        msg["To"] = ", ".join(EMAIL_TO)
-        msg["Subject"] = subject
-        msg.attach(MIMEText(body, "plain"))
+    msg = MIMEMultipart()
+    msg["From"] = EMAIL_FROM
+    msg["To"] = ", ".join(EMAIL_TO)
+    msg["Subject"] = subject
+    msg.attach(MIMEText(body, "plain"))
 
-        logger.info("🔌 Connecting to SMTP server")
-        with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=30) as server:
-            server.ehlo()
-            server.starttls()
-            server.ehlo()
-            server.login(SMTP_USER, SMTP_PASSWORD)
-            server.sendmail(EMAIL_FROM, EMAIL_TO, msg.as_string())
+    logger.info("🔌 Connecting to SMTP server")
+    with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=30) as server:
+        server.ehlo()
+        server.starttls()
+        server.ehlo()
+        server.login(SMTP_USER, SMTP_PASSWORD)
+        server.sendmail(EMAIL_FROM, EMAIL_TO, msg.as_string())
 
-        logger.info("✅ Email sent successfully")
-
-    except Exception:
-        logger.exception("❌ Email sending FAILED")
-        raise
+    logger.info("✅ Email sent successfully")
 
 # =====================================================
 # MAIN DAILY LOGIC
@@ -187,7 +183,7 @@ def main():
         master_data.extend(new_links)
         save_json(MASTER_FILE, master_data)
 
-        # Save daily JSON
+        # Save daily JSON (keeps updated URLs, but no email)
         save_json(DAILY_FILE, {
             "date": current_date,
             "total_scraped_today": len(scraped_today),
@@ -200,28 +196,22 @@ def main():
         logger.info("JSON files saved")
 
         # =================================================
-        # EMAIL (ALWAYS SENT)
+        # EMAIL — ONLY IF NEW URLS EXIST
         # =================================================
-        subject = f"📊 BreachSense Daily Scrape Report | {current_date}"
-
         if new_links:
-            logger.info("Preparing email: NEW URLs found")
+            logger.info("📧 Sending email: NEW URLs found")
+
+            subject = f"🚨 BreachSense NEW URLs | {current_date}"
             body_lines = [
                 f"Date: {current_date}",
                 f"New BreachSense URLs found: {len(new_links)}",
                 ""
             ]
             body_lines.extend(f"- {n['url']}" for n in new_links)
-            body = "\n".join(body_lines)
-        else:
-            logger.info("Preparing email: NO new URLs found")
-            body = (
-                f"Date: {current_date}\n\n"
-                "✅ No new BreachSense URLs were found today.\n\n"
-                "This is an automated daily status email."
-            )
 
-        send_email(subject, body)
+            send_email(subject, "\n".join(body_lines))
+        else:
+            logger.info("📭 No new URLs found — email NOT sent")
 
         logger.info("🏁 BreachSense daily scrape completed successfully")
 
