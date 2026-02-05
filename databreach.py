@@ -206,14 +206,24 @@ def main():
 
         logger.info("JSON files saved")
 
+        subject = f"📊 BreachSense Daily Scrape Report | {current_date}"
+
         # =================================================
-        # EMAIL (SPLIT IF > 40)
+        # CASE 1: NO NEW LINKS → SEND STATUS EMAIL
         # =================================================
         if not new_links:
-            logger.info("📭 No new URLs found — email NOT sent")
+            body = (
+                f"Date: {current_date}\n\n"
+                "✅ No new BreachSense breach URLs were found today.\n\n"
+                "This is an automated daily status email."
+            )
+            send_email(subject, body)
+            logger.info("📧 Sent no-new-links status email")
             return
 
-        subject = f"🚨 BreachSense NEW URLs | {current_date}"
+        # =================================================
+        # CASE 2: NEW LINKS → SPLIT EMAILS IF > 40
+        # =================================================
         chunks = list(chunk_list(new_links, MAX_LINKS_PER_EMAIL))
 
         for idx, chunk in enumerate(chunks, start=1):
