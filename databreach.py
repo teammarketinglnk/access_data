@@ -20,17 +20,15 @@ load_dotenv()
 # =====================================================
 LOG_FILE = "status.log"
 
-logger = logging.getLogger()
+logger = logging.getLogger("breachsense")
 logger.setLevel(logging.INFO)
 logger.handlers.clear()
 
-# Console handler (GitHub Actions)
 console_handler = logging.StreamHandler(sys.stdout)
 console_handler.setFormatter(
     logging.Formatter("%(asctime)s | %(levelname)s | %(message)s")
 )
 
-# File handler
 file_handler = logging.FileHandler(LOG_FILE, mode="a", encoding="utf-8")
 file_handler.setFormatter(
     logging.Formatter("%(asctime)s | %(levelname)s | %(message)s")
@@ -48,6 +46,8 @@ BREACH_PREFIX = "https://www.breachsense.com/breaches/"
 MASTER_FILE = "breachsense_master.json"
 DAILY_FILE = "breachsense_daily.json"
 
+MAX_LINKS_PER_EMAIL = 40
+
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; BreachSenseDailyScraper/1.0)"
 }
@@ -61,6 +61,16 @@ SMTP_USER = os.getenv("SMTP_USER")
 SMTP_PASSWORD = os.getenv("SMTP_PASSWORD")
 EMAIL_FROM = os.getenv("EMAIL_FROM", SMTP_USER)
 EMAIL_TO = [e.strip() for e in os.getenv("EMAIL_TO", "").split(",") if e.strip()]
+
+def require_env(name):
+    if not os.getenv(name):
+        raise RuntimeError(f"Missing required env var: {name}")
+
+require_env("SMTP_HOST")
+require_env("SMTP_USER")
+require_env("SMTP_PASSWORD")
+if not EMAIL_TO:
+    raise RuntimeError("EMAIL_TO missing")
 
 # =====================================================
 # FETCH SITEMAP
@@ -83,8 +93,7 @@ def parse_sitemap(xml_data):
         loc = url.find("sm:loc", ns)
         lastmod = url.find("sm:lastmod", ns)
 
-        # ✅ FIXED (no DeprecationWarning)
-        if loc is None or loc.text is None:
+        if loc is None or not loc.text:
             continue
 
         link = loc.text.strip()
@@ -117,9 +126,9 @@ def save_json(path, data):
         json.dump(data, f, indent=2)
 
 # =====================================================
-# SMTP EMAIL SENDER
+# EMAIL
 # =====================================================
-def send_email(subject: str, body: str):
+def send_email(subject, body):
     logger.info("📧 Preparing email")
 
     msg = MIMEMultipart()
@@ -138,8 +147,12 @@ def send_email(subject: str, body: str):
 
     logger.info("✅ Email sent successfully")
 
+def chunk_list(items, size):
+    for i in range(0, len(items), size):
+        yield items[i:i + size]
+
 # =====================================================
-# MAIN DAILY LOGIC
+# MAIN
 # =====================================================
 def main():
     logger.info("🚀 BreachSense daily scrape started")
@@ -179,11 +192,9 @@ def main():
             f"Comparison complete | New: {len(new_links)} | Updated: {len(updated_links)}"
         )
 
-        # Update master JSON
         master_data.extend(new_links)
         save_json(MASTER_FILE, master_data)
 
-        # Save daily JSON (keeps updated URLs, but no email)
         save_json(DAILY_FILE, {
             "date": current_date,
             "total_scraped_today": len(scraped_today),
@@ -196,22 +207,26 @@ def main():
         logger.info("JSON files saved")
 
         # =================================================
-        # EMAIL — ONLY IF NEW URLS EXIST
+        # EMAIL (SPLIT IF > 40)
         # =================================================
-        if new_links:
-            logger.info("📧 Sending email: NEW URLs found")
+        if not new_links:
+            logger.info("📭 No new URLs found — email NOT sent")
+            return
 
-            subject = f"🚨 BreachSense NEW URLs | {current_date}"
+        subject = f"🚨 BreachSense NEW URLs | {current_date}"
+        chunks = list(chunk_list(new_links, MAX_LINKS_PER_EMAIL))
+
+        for idx, chunk in enumerate(chunks, start=1):
             body_lines = [
                 f"Date: {current_date}",
-                f"New BreachSense URLs found: {len(new_links)}",
+                f"Total NEW BreachSense URLs: {len(new_links)}",
+                f"Email part: {idx} of {len(chunks)}",
                 ""
             ]
-            body_lines.extend(f"- {n['url']}" for n in new_links)
-
+            body_lines.extend(f"- {n['url']}" for n in chunk)
             send_email(subject, "\n".join(body_lines))
-        else:
-            logger.info("📭 No new URLs found — email NOT sent")
+
+        logger.info(f"📧 Sent {len(chunks)} email(s)")
 
         logger.info("🏁 BreachSense daily scrape completed successfully")
 
