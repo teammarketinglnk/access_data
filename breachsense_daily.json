@@ -1,10 +1,353 @@
 {
   "date": "2026-02-16",
-  "total_scraped_today": 23558,
-  "new_links_count": 0,
-  "updated_links_count": 8,
-  "new_links": [],
+  "total_scraped_today": 23626,
+  "new_links_count": 68,
+  "updated_links_count": 10,
+  "new_links": [
+    {
+      "url": "https://www.breachsense.com/breaches/abrahamson-center-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/anc-legal-office-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/archaeological-institute-of-america-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/ardene-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/beacon-pointe-advisors-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/betesan-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/bigso-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/bitgo-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/branagh-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/business-information-technology-solutions-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/canada-goose-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/carrera-casting-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/city-of-new-castle-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/comdat-datasystems-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/community-health-action-of-staten-island-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/copamarina-beach-resort-and-spa-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/copier-careers-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/cross-jeans-zakrt-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/dynamic-machining-and-manufacturing-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/elite-screens-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/figure-technology-solutions-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/fremont-contract-carriers-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/futurbath-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/global-group-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/gruppo-avanti-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/halcyon-technologies-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/heartland-title-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/hma-public-relations-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/hums-hardware-and-rental-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/intsika-yethu-municipality-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/jc-resorts-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/kingdee-international-software-group-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/la-rioja-alta-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/lusamerica-foods-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/mairie-de-fumel-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/makimura-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/master-handlers-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/max-usa-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/meng-seng-engineering-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/mercer-advisors-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/michael-l-larson-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/nang-kuang-pharmaceutical-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/nile-air-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/northeast-pharmacy-service-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/oceania-gas-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/ordre-des-experts-comptables-de-bretagne-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/rieco-industries-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/robbins-parking-service-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/rosenthal-kooshoian-and-lennon-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/samkwang-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/sands-suites-resort-and-spa-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/seven-stars-resort-and-spa-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/shining-labels-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/siem-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/smartglass-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/spir-star-asia-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/syl-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/the-marena-group-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/the-syverson-group-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/transportes-la-sevillanita-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/ucg-associates-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/unified-engineering-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/union-trading-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/uniturn-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/vilati-gy%C3%A1rt%C3%B3-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/white-beach-hotel-puerto-galera-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/yash-highvoltage-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    },
+    {
+      "url": "https://www.breachsense.com/breaches/yem-chio-data-breach/",
+      "lastmod": "2026-02-16T00:00:00+00:00",
+      "scraped_date": "2026-02-16"
+    }
+  ],
   "updated_links": [
+    "https://www.breachsense.com/breaches/",
+    "https://www.breachsense.com/breaches/2026/february/",
     "https://www.breachsense.com/breaches/elad-data-breach/",
     "https://www.breachsense.com/breaches/hawaii-unified-data-breach/",
     "https://www.breachsense.com/breaches/hawaii-unified-data-breach/",
