@@ -4,7 +4,7 @@ permissions:
 on:
   schedule:
     # Runs every day at 06:00 UTC (11:30 AM IST)
-    - cron: "0 9 * * *"
+    - cron: "30 16 * * *"
 
   # Allows manual run from GitHub UI
   workflow_dispatch:
