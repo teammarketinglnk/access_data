@@ -1,8 +1,8 @@
 [
   {
     "url": "https://www.breachsense.com/breaches/",
-    "lastmod": "2026-03-25T00:00:00+00:00",
-    "scraped_date": "2026-03-25"
+    "lastmod": "2026-03-26T00:00:00+00:00",
+    "scraped_date": "2026-03-26"
   },
   {
     "url": "https://www.breachsense.com/breaches/2026/january/",
@@ -20132,7 +20132,7 @@
   {
     "url": "https://www.breachsense.com/breaches/hawaii-unified-data-breach/",
     "lastmod": "2025-06-25T00:00:00+00:00",
-    "scraped_date": "2026-03-25"
+    "scraped_date": "2026-03-26"
   },
   {
     "url": "https://www.breachsense.com/breaches/inflite-engineering-services-data-breach/",
@@ -42362,7 +42362,7 @@
   {
     "url": "https://www.breachsense.com/breaches/elad-data-breach/",
     "lastmod": "2024-11-04T00:00:00+00:00",
-    "scraped_date": "2026-03-25"
+    "scraped_date": "2026-03-26"
   },
   {
     "url": "https://www.breachsense.com/breaches/fat-boys-fleet-data-breach/",
@@ -44397,7 +44397,7 @@
   {
     "url": "https://www.breachsense.com/breaches/smokers-choice-data-breach/",
     "lastmod": "2024-10-09T00:00:00+00:00",
-    "scraped_date": "2026-03-25"
+    "scraped_date": "2026-03-26"
   },
   {
     "url": "https://www.breachsense.com/breaches/trinity-home-design-center-data-breach/",
@@ -51482,7 +51482,7 @@
   {
     "url": "https://www.breachsense.com/breaches/bunger-steel-data-breach/",
     "lastmod": "2024-06-24T00:00:00+00:00",
-    "scraped_date": "2026-03-25"
+    "scraped_date": "2026-03-26"
   },
   {
     "url": "https://www.breachsense.com/breaches/cbiz-data-breach/",
@@ -86237,7 +86237,7 @@
   {
     "url": "https://www.breachsense.com/breaches/ima-data-breach/",
     "lastmod": "2022-11-17T00:00:00+00:00",
-    "scraped_date": "2026-03-25"
+    "scraped_date": "2026-03-26"
   },
   {
     "url": "https://www.breachsense.com/breaches/lake-charles-memorial-health-system-data-breach/",
@@ -119701,8 +119701,8 @@
   },
   {
     "url": "https://www.breachsense.com/breaches/2026/march/",
-    "lastmod": "2026-03-25T00:00:00+00:00",
-    "scraped_date": "2026-03-25"
+    "lastmod": "2026-03-26T00:00:00+00:00",
+    "scraped_date": "2026-03-26"
   },
   {
     "url": "https://www.breachsense.com/breaches/abrams-sales-data-breach/",
@@ -123148,5 +123148,70 @@
     "url": "https://www.breachsense.com/breaches/wefa-press-data-breach/",
     "lastmod": "2026-03-25T00:00:00+00:00",
     "scraped_date": "2026-03-25"
+  },
+  {
+    "url": "https://www.breachsense.com/breaches/anbogen-data-breach/",
+    "lastmod": "2026-03-26T00:00:00+00:00",
+    "scraped_date": "2026-03-26"
+  },
+  {
+    "url": "https://www.breachsense.com/breaches/cape-may-county-new-jersey-data-breach/",
+    "lastmod": "2026-03-26T00:00:00+00:00",
+    "scraped_date": "2026-03-26"
+  },
+  {
+    "url": "https://www.breachsense.com/breaches/eastex-labs-data-breach/",
+    "lastmod": "2026-03-26T00:00:00+00:00",
+    "scraped_date": "2026-03-26"
+  },
+  {
+    "url": "https://www.breachsense.com/breaches/esprinet-data-breach/",
+    "lastmod": "2026-03-26T00:00:00+00:00",
+    "scraped_date": "2026-03-26"
+  },
+  {
+    "url": "https://www.breachsense.com/breaches/glenmark-pharma-data-breach/",
+    "lastmod": "2026-03-26T00:00:00+00:00",
+    "scraped_date": "2026-03-26"
+  },
+  {
+    "url": "https://www.breachsense.com/breaches/hlf-goslar-data-breach/",
+    "lastmod": "2026-03-26T00:00:00+00:00",
+    "scraped_date": "2026-03-26"
+  },
+  {
+    "url": "https://www.breachsense.com/breaches/livech-data-breach/",
+    "lastmod": "2026-03-26T00:00:00+00:00",
+    "scraped_date": "2026-03-26"
+  },
+  {
+    "url": "https://www.breachsense.com/breaches/lorain-county-community-college-data-breach/",
+    "lastmod": "2026-03-26T00:00:00+00:00",
+    "scraped_date": "2026-03-26"
+  },
+  {
+    "url": "https://www.breachsense.com/breaches/lp-kolding-data-breach/",
+    "lastmod": "2026-03-26T00:00:00+00:00",
+    "scraped_date": "2026-03-26"
+  },
+  {
+    "url": "https://www.breachsense.com/breaches/noi-hotels-data-breach/",
+    "lastmod": "2026-03-26T00:00:00+00:00",
+    "scraped_date": "2026-03-26"
+  },
+  {
+    "url": "https://www.breachsense.com/breaches/pulpdent-data-breach/",
+    "lastmod": "2026-03-26T00:00:00+00:00",
+    "scraped_date": "2026-03-26"
+  },
+  {
+    "url": "https://www.breachsense.com/breaches/uae-customs-data-breach/",
+    "lastmod": "2026-03-26T00:00:00+00:00",
+    "scraped_date": "2026-03-26"
+  },
+  {
+    "url": "https://www.breachsense.com/breaches/van-compare-data-breach/",
+    "lastmod": "2026-03-26T00:00:00+00:00",
+    "scraped_date": "2026-03-26"
   }
 ]
